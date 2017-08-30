@@ -10,18 +10,16 @@ source:
   sha256: d44a71f7903ce75c3c1d3839564fba2e7275a88e2353a5d2197280ec938752f5
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win] 
 
 requirements:
   build:
-    - python
     - g2clib
     - libcdms
     - libpng >=1.6.28,<1.7
     - gcc 
   run:
-    - python
     - g2clib
     - libcdms
     - libpng >=1.6.28,<1.7
