@@ -10,34 +10,35 @@ source:
   sha256: b587c06b13844e7d21ab43017da06175b0d344763e40c44b4593ffb766104388
 
 build:
-  number: 0
-  skip: True  # [win] 
+  number: 1
+  skip: True  # [win]
 
 requirements:
   build:
+    - {{ compiler('fortran') }}
+    - {{ compiler('c') }}
+  host:
     - g2clib
     - libcdms
-    - libpng >=1.6.28,<1.7
-    - gcc 
+    - libpng
   run:
     - g2clib
     - libcdms
-    - libpng >=1.6.28,<1.7
-    - libgfortran
+    - libpng
 
 test:
   commands:
-    - test -f $PREFIX/lib/libdrsfortran.a 
+    - test -f $PREFIX/lib/libdrsfortran.a
 
 about:
   home:  http://uvcdat.llnl.gov
   license: CCLRC
   summary: 'Data Retrieval and Storage DRS software Fortran library'
-  description: |            
-    libdrs is suitable for the data generated and used in climate model research. 
-    It is oriented toward use with models generating very large datasets on 
-    supercomputers, as well as with graphics workstations used for analysis and 
-    display of smaller subsets of data. 
+  description: |
+    libdrs is suitable for the data generated and used in climate model research.
+    It is oriented toward use with models generating very large datasets on
+    supercomputers, as well as with graphics workstations used for analysis and
+    display of smaller subsets of data.
   dev_url: http://github.com/UV-CDAT/libdrs
 
 extra:
